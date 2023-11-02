@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.mypage')
 @section('title', 'レシピの題名') 
 
 
