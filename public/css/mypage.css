@@ -2,7 +2,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: #fff;
-  color: #333;
+  color: #46593A;
 }
 
 .navbar-laravel {
@@ -15,11 +15,11 @@ body {
 }
 
 .nav-link {
-  color: #fff !important;
+  color: #46593A !important;
 }
 
 .table-dark {
-  color: #fff;
+  color: #46593A;
 }
 
 .list-group-item {
