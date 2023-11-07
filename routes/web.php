@@ -20,6 +20,7 @@ Route::get('/', function () {
 use App\Http\Controllers\Mypage\RecipeController;
 Route::controller(RecipeController::class)->prefix('mypage')->group(function(){
     Route::get('recipe/create','add');
+    Route::get('recipe/edit','edit');
 });
 
 use App\Http\Controllers\Mypage\ProfileController;
@@ -27,7 +28,6 @@ Route::controller(ProfileController::class)->prefix('mypage')->group(function(){
     Route::get('profile/create','add');
     Route::get('profile/edit','edit');
 });
-
 
 Auth::routes();
 

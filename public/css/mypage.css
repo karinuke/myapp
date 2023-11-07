@@ -32,7 +32,7 @@ body {
 }
 
 .login-header {
-  background-color: rgba(0, 0, 0, 0.25)
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .login-body {
@@ -48,6 +48,3 @@ body {
   border-color: #fff;
   background-color: #000;
 }
-
-//npm run dev
-//npm run watch
