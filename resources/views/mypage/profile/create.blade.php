@@ -18,6 +18,12 @@
                         </ul>
                     @endif
                     <div class="form-group row">
+                        <label class="col-md-2">名前</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2">ユーザー名</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="username" value="{{ old('username') }}">
@@ -26,7 +32,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">自己紹介</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="introduction" rows="3"{{ old('introduction') }}>
+                            <textarea class="form-control" name="introduction" rows="10">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -36,14 +42,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">資格</label>
+                        <label class="col-md-2">資格等</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="qualifications" rows="10">{{ old('qualifications') }}</textarea>
+                            <input type="text" class="form-control" name="qualification" value="{{ old('qualification') }}">
                         </div>
                     </div>
-                    
+                    <div class="form-group row">
+                        <label class="col-md-2">SNS等</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="SNS" value="{{ old('SNS') }}">
+                        </div>
+                    </div>
                     @csrf
-                    <input type="submit" class="btn btn-primary" value="保存する">
+                    <div align="center">
+                        <input type="submit" class="btn btn-danger" value="保存する">
+                    </div>
                 </form>
             </div>
         </div>

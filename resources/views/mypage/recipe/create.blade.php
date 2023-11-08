@@ -65,7 +65,9 @@
                         </div>
                     </div>
                     @csrf
-                    <input type="submit" class="btn btn-primary" value="投稿！">
+                    <div align="center">
+                        <input type="submit" class="btn btn-danger" value="投稿！">
+                    </div>
                 </form>
             </div>
         </div>
