@@ -13,11 +13,11 @@ class ProfileController extends Controller
         return view('mypage.profile.create');
     }
     
-    public function create()
+    public function create(Request $request)
     {
         return redirect('mypage/profile/create');
     }
-    
+   
     public function edit()
     {
         return view('mypage.profile.edit');
@@ -27,4 +27,5 @@ class ProfileController extends Controller
     {
         return redirect('mypage/profile/edit');
     }
+    
 }

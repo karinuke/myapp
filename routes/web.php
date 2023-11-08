@@ -26,8 +26,9 @@ Route::controller(RecipeController::class)->prefix('mypage')->middleware('auth')
 
 use App\Http\Controllers\Mypage\ProfileController;
 Route::controller(ProfileController::class)->prefix('mypage')->middleware('auth')->group(function(){
-    Route::get('profile/create','add');
-    Route::get('profile/edit','edit');
+    Route::get('profile/create','add')->name('profile.add');
+    Route::get('profile/edit','edit')->name('profile.edit');
+    Route::post('profile/create','create')->name('mypage.profile.create');
 });
 
 Auth::routes();

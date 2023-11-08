@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">レシピのキャッチコピー</label>
+                        <label class="col-md-2">キャッチコピー</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                         </div>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">出来上がりの写真</label>
+                        <label class="col-md-2">完成写真</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                         </div>
