@@ -30,6 +30,7 @@
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
+                    <img src="/images/logo_transparent.png">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'WellEats') }}
                     </a>

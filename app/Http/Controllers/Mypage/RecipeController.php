@@ -17,7 +17,11 @@ class RecipeController extends Controller
     {
         return view('mypage.recipe.edit');
     }
-    
+    public function create(Request $request)
+    {
+        // admin/news/createにリダイレクトする
+        return redirect('mypage/recipe/create');
+    }
     //viewはviewテンプレートをそのまま表示。
     //redirectはroutingをもう一度通るから２回アクションがある。(投稿一覧など・・・)
     //editはviewじゃないと辻褄が合わなくなる。

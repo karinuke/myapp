@@ -19,8 +19,9 @@ Route::get('/', function () {
 
 use App\Http\Controllers\Mypage\RecipeController;
 Route::controller(RecipeController::class)->prefix('mypage')->middleware('auth')->group(function(){
-    Route::get('recipe/create','add');
-    Route::get('recipe/edit','edit');
+    Route::get('recipe/create','add')->name('recipe.add');
+    Route::get('recipe/edit','edit')->name('recipe.edit');
+    Route::post('recipe/create','create')->name('mypage.recipe.create');
 });
 
 use App\Http\Controllers\Mypage\ProfileController;
