@@ -41,11 +41,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">検索窓</a>
-                            </li>
-                        </ul>
-
+                           
+                            @csrf
+                            <input type="submit" class="btn btn-danger" value="検索">
+                            
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav">
                              <!-- Authentication Links -->

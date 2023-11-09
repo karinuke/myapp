@@ -18,17 +18,18 @@ Route::get('/', function () {
 });
 
 use App\Http\Controllers\Mypage\RecipeController;
-Route::controller(RecipeController::class)->prefix('mypage')->middleware('auth')->group(function(){
+Route::controller(RecipeController::class)->prefix('mypage')->name('mypage.')->middleware('auth')->group(function(){
     Route::get('recipe/create','add')->name('recipe.add');
     Route::get('recipe/edit','edit')->name('recipe.edit');
-    Route::post('recipe/create','create')->name('mypage.recipe.create');
+    Route::post('recipe/create','create')->name('recipe.create');
 });
 
 use App\Http\Controllers\Mypage\ProfileController;
-Route::controller(ProfileController::class)->prefix('mypage')->middleware('auth')->group(function(){
+Route::controller(ProfileController::class)->prefix('mypage')->name('mypage.')->middleware('auth')->group(function(){
     Route::get('profile/create','add')->name('profile.add');
     Route::get('profile/edit','edit')->name('profile.edit');
     Route::post('profile/create','create')->name('mypage.profile.create');
+    Route::get('profile','index')->name('profile.index');
 });
 
 Auth::routes();
