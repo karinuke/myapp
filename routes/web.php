@@ -28,7 +28,7 @@ use App\Http\Controllers\Mypage\ProfileController;
 Route::controller(ProfileController::class)->prefix('mypage')->name('mypage.')->middleware('auth')->group(function(){
     Route::get('profile/create','add')->name('profile.add');
     Route::get('profile/edit','edit')->name('profile.edit');
-    Route::post('profile/create','create')->name('mypage.profile.create');
+    Route::post('profile/create','create')->name('profile.create');
     Route::get('profile','index')->name('profile.index');
 });
 
