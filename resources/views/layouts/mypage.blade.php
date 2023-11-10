@@ -42,8 +42,10 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav ms-auto">
                            
-                            @csrf
-                            <input type="submit" class="btn btn-danger" value="検索">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="キーワードを入力">
+                                <button class="btn btn-danger" type="button" id="button-addon2"><i class="fas fa-search"></i> search </button>
+                            </div>
                             
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav">

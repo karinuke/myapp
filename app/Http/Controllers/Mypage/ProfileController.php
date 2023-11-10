@@ -48,7 +48,7 @@ class ProfileController extends Controller
         return redirect('mypage/profile/edit');
     }
     
-    public function index(Requst $request)
+    public function index(Request $request)
     {
         $cond_title=$request->cond_title;
         if($cond_title !=''){

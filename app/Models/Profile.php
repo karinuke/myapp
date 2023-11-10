@@ -12,11 +12,11 @@ class Profile extends Model
     protected $guarded = array('id');
     
     public static $rules = array(
-      'name' => 'required'; 
-      'username'=> 'required';
-      'introduction'=> 'required';
-      'image_path'=> 'required';
-      'qualification'=> 'required';
-      'SNS'=> 'required';
+      'name' => 'required',
+      'username'=> 'required',
+      'introduction'=> 'required',
+      'image_path'=> 'required',
+      'qualification'=> 'required',
+      'SNS'=> 'required'
     );
 }

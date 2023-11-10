@@ -22,6 +22,7 @@ Route::controller(RecipeController::class)->prefix('mypage')->name('mypage.')->m
     Route::get('recipe/create','add')->name('recipe.add');
     Route::get('recipe/edit','edit')->name('recipe.edit');
     Route::post('recipe/create','create')->name('recipe.create');
+    Route::get('recipe','index')->name('recipe.index');
 });
 
 use App\Http\Controllers\Mypage\ProfileController;
