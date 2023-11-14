@@ -82,6 +82,11 @@
                         <tr>
                             <th width="10%">SNS</th>
                             <td>{{ Str::limit($profile->SNS, 100) }}</td>
+                        <td>
+                            <div>
+                                <a href="{{ route('mypage.profile.edit', ['id' => $profile->id]) }}">編集</a>
+                            </div>
+                        </td>
                         </tr> 
                         @endforeach
                     </table>

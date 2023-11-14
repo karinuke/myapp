@@ -1,6 +1,7 @@
-@extends('layouts.mypage')
+{{--@extends('layouts.mypage')
 @section('title', 'TOP PAGE')
 
 @section('content')
-    <img src="/images/topphoto.jpg">
+    <img src="{{ secure_asset('image/topphoto.jpg') }}">
     
+@endsection--}}

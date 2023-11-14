@@ -18,7 +18,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">料理の種類</label>
                         <div class="col-md-10">
-                            <input type="text" name="genre">
+                            {{--<input type="text" name="genre">をなくす--}}
                             <select name="genre">
                                 <option value="主食">主食</option>
                                 <option value="主菜">主菜</option>

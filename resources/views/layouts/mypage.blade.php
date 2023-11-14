@@ -30,10 +30,12 @@
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
-                    <img src="/images/logo_transparent.png">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'WellEats') }}
+                    
+                    <a class="navbar-brand header_logo" href="{{ url('/') }}">
+                        <img src="{{ secure_asset('image/logo_transparent.png') }}">
                     </a>
+                    {{--aとdivはリンクタグかブロックかで違う--}}
+                    
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -61,6 +63,13 @@
                                  </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('mypage.profile.index') }}">
+                                        登録情報
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('mypage.recipe.index') }}">
+                                        投稿したレシピ一覧
+                                    </a>
+                                    
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

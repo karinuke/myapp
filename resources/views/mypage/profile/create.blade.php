@@ -42,7 +42,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">資格等</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="qualification" value="{{ old('qualification') }}">
+                            <input type="text" class="form-control" name="qualification"  rows="2" value="{{ old('qualification') }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -59,3 +59,5 @@
             </div>
         </div>
     </div>
+@endsection
+    

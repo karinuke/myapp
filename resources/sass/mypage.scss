@@ -3,6 +3,11 @@ body {
   background-position: center;
   background-color: #fff;
   color: #46593A;
+  font-family: 'Noto Serif JP', serif !important;
+}
+
+img{
+  width:100%;
 }
 
 .navbar-laravel {
@@ -47,6 +52,23 @@ body {
   color: #fff;
   border-color: #fff;
   background-color: #000;
+}
+
+.header_logo {
+  width:100px;
+}
+
+.circle_parent {
+  text-align: center;
+}
+
+.circle{
+  display: inline-block;
+  text-align:center;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #DCE8B0;
 }
 
 //npm run dev
