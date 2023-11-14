@@ -26,7 +26,8 @@ Route::controller(RecipeController::class)->prefix('mypage')->name('mypage.')->m
     Route::get('recipe/edit','edit')->name('recipe.edit');
     Route::post('recipe/create','create')->name('recipe.create');
     Route::get('recipe','index')->name('recipe.index');
-    
+    Route::get('recipe/edit','edit')->name('recipe.edit');
+    Route::post('recipe/edit','update')->name('recipe.update');
 });
 
 use App\Http\Controllers\Mypage\ProfileController;
@@ -37,6 +38,12 @@ Route::controller(ProfileController::class)->prefix('mypage')->name('mypage.')->
     Route::get('profile','index')->name('profile.index');
     Route::get('profile/edit','edit')->name('profile.edit');
     Route::post('profile/edit','update')->name('profile.update');
+});
+
+use App\Http\Controllers\Recipe;
+Route::controller(Recipe::class)->middleware('auth')->group(function(){
+    Route::get('recipe','index')->name('recipe.index');
+    
 });
 
 Auth::routes();

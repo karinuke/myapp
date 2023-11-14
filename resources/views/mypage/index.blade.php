@@ -13,22 +13,22 @@
     <span class="circle">
         主食
         <br>
-        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('mypage.recipe.index')}}'">見る</button>
+        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">見る</button>
     </span>
     <span class="circle">
         主菜
         <br>
-        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('mypage.recipe.index')}}'">見る</button>
+        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">見る</button>
     </span>
     <span class="circle">
         副菜
         <br>
-        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('mypage.recipe.index')}}'">見る</button>
+        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">見る</button>
     </span>
     <span class="circle">
         汁物
         <br>
-        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('mypage.recipe.index')}}'">見る</button>
+        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">見る</button>
     </span>
     </div>
 

@@ -70,3 +70,17 @@ img {
   border-radius: 50%;
   background: #DCE8B0;
 }
+
+.title_box {
+  width: 30%;
+  height: 70px;
+  background: #DCE8B0;
+  position: relative;
+}
+
+.title_text {
+  color: #46593A;
+  position: absolute;
+  left: 25px;
+  top: 5px;
+}
