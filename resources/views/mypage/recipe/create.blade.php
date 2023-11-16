@@ -2,10 +2,13 @@
 @section('title', 'レシピ投稿')
 
 @section('content')
+ <div class="title_box">
+    <span class="title_text"><font size="6">レシピ投稿</font></span>
+ </div>
  <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>レシピの投稿</h2>
+                
                 <form action="{{ route('mypage.recipe.create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
@@ -49,12 +52,6 @@
                         <label class="col-md-2">材料</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="materials" rows="10">{{ old('materials') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">分量</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" name="quantity" rows="10">{{ old('quantity') }}</textarea>
                         </div>
                     </div>
                     

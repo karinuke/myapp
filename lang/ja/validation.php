@@ -169,9 +169,14 @@ return [
         'name' => '名前',
         'username' => 'ユーザー名',
         'introduction' => '自己紹介',
-        'image_path' => 'プロフィール写真',
+        'image_path' => '写真',
         'qualification' => '資格',
         'SNS' => 'SNS',
+        'genre'=>'料理の種類',
+        'title'=>'キャッチコピー',
+        'detail'=>'詳細やポイント',
+        'materials'=>'材料',
+        'recipe'=>'作り方',
     ],
 
 ];

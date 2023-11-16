@@ -2,6 +2,7 @@
 @section('title', '登録情報')
 
 @section('content')
+    
     <div class="container">
         <div class="row">
             <h2>MyPage</h2>
@@ -10,7 +11,13 @@
             <div class="col-md-8">
                 <form action="{{ route('mypage.profile.index') }}" method="get">
                     <div class="form-group row">
-                        <label class="col-md-2">登録情報</label>
+                        <div class="title_box">
+                            <a class="title_text" href="{{route('mypage.profile.index')}}"><font size="6">登録情報</font></a>
+                        </div>
+                        <div class="title_box">
+                            <a class="title_text" href="{{route('mypage.recipe.index')}}"><font size="6">Myレシピ一覧</font></a>
+                        </div>
+                        
                         {{--
                         <div class="col-md-8">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
@@ -95,4 +102,8 @@
             
                 
     </div>
+    <div  align="center" >
+        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('mypage.profile.create') }}' ">プロフィールの登録</button>
+    </div>
+
 @endsection

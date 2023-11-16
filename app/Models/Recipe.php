@@ -17,7 +17,6 @@ class Recipe extends Model
         'detail'=>'required',
         'image_path'=>'required',
         'materials'=>'required',
-        'quantity'=>'required',
         'recipe'=>'required',
           
     );

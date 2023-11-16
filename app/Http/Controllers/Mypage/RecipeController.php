@@ -45,7 +45,7 @@ class RecipeController extends Controller
         $recipe->save();
         
         // admin/news/createにリダイレクトする
-        return redirect('mypage/recipe/create');
+        return redirect('mypage/recipe');
     }
     //viewはviewテンプレートをそのまま表示。
     //redirectはroutingをもう一度通るから２回アクションがある。(投稿一覧など・・・)

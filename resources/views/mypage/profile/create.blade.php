@@ -2,10 +2,12 @@
 @section('title', 'プロフィール登録')
 
 @section('content')
+ <div class="title_box">
+    <span class="title_text"><font size="6">プロフィール登録</font></span>
+</div>
  <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>プロフィールの登録</h2>
                 <form action="{{ route('mypage.profile.create') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
