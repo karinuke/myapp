@@ -43,6 +43,7 @@ Route::controller(ProfileController::class)->prefix('mypage')->name('mypage.')->
 use App\Http\Controllers\Recipe;
 Route::controller(Recipe::class)->middleware('auth')->group(function(){
     Route::get('recipe','index')->name('recipe.index');
+    Route::get('recipe/post', 'post')->name('recipe.post');
     
 });
 

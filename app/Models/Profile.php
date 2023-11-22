@@ -15,7 +15,7 @@ class Profile extends Model
       'name' => 'required',
       'username'=> 'required',
       'introduction'=> 'required',
-      'image_path'=> 'required',
+      'image'=> 'required',
       'qualification'=> 'required',
       'SNS'=> 'required'
     );

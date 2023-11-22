@@ -23,7 +23,7 @@ img {
   color: #46593A !important;
 }
 
-.table-dark {
+.table-success {
   color: #46593A;
 }
 
@@ -78,7 +78,6 @@ img {
   top: 15px;
   left: 15px;
 }
-
 .circle_image img {
   width: 100%;
   height: 100%;
@@ -86,7 +85,28 @@ img {
   filter: opacity(40%);
 }
 
-p {
+.circle_post {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: #DCE8B0;
+  margin: 50px;
+}
+
+.circle_postimage {
+  width: 450px;
+  height: 450px;
+  position: relative;
+  top: 25px;
+  left: 25px;
+}
+.circle_postimage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.sub_button {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -114,16 +134,12 @@ p {
 .container {
   position: relative;
 }
-
 .container img {
   width: 100%;
 }
 
-p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate -50%, -50%;
-  padding: 0;
-  margin: 0;
+.top_button {
+  text-align: center;
+  margin-top: -100px;
+  margin-bottom: 100px;
 }

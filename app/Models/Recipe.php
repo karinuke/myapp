@@ -15,7 +15,7 @@ class Recipe extends Model
         'genre'=>'required',
         'title'=>'required',
         'detail'=>'required',
-        'image_path'=>'required',
+        'image'=>'required',
         'materials'=>'required',
         'recipe'=>'required',
           

@@ -14,7 +14,7 @@ class MypageController extends Controller
         $posts=Recipe::all()->sortByDesc('updated_at');
         
         if(count($posts)>0){
-            $headline=$posts->shitf();
+            $headline=$posts->shift();
         } else {
             $headline=null;
         }
