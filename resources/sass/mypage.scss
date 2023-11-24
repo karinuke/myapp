@@ -90,7 +90,6 @@ img{
   height: 500px;
   border-radius: 50%;
   background: #DCE8B0;
-  margin: 50px;
 }
 
 .circle_postimage{
@@ -143,6 +142,34 @@ img{
   margin-top: -100px;
   margin-bottom: 100px;
 }
+
+.post{
+  display: flex;
+  flex-warp: wrap;
+  justify-content: space-around;
+  width: 60%;
+  margin: 30px 0;
+  padding-top: 30px;
+}
+
+.recipe_posts{
+  margin-bottom: 30px;
+  padding: 50px 10px;
+  text-align: center;
+}
+
+.box_materials{
+  background: #DCE8B0;
+  border: 3px solid #DCE8B0;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+.box_recipe{
+  border: 3px solid #DCE8B0;
+  padding-left: 10px;
+  border-radius: 10px;
+}
+
 
 //npm run dev
 //npm run watch
