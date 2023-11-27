@@ -11,7 +11,8 @@ class MypageController extends Controller
     //
     public function index(Request $request)
     {
-        $posts=Recipe::all()->sortByDesc('updated_at');
+        
+        $posts = Recipe::orderBy('id','desc')->take(3)->get();
         
         if(count($posts)>0){
             $headline=$posts->shift();

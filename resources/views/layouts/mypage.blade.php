@@ -36,11 +36,16 @@
                     </a>
                     {{--aとdivはリンクタグかブロックかで違う--}}
                     
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+                    <!--    <span class="navbar-toggler-icon"></span>-->
+                    <!--</button>-->
+                    
+                    <div class="header_title"> 
+                       <p>Well Eats</p>
+                    </div>  
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav ms-auto">
                            
@@ -48,7 +53,7 @@
                                 <input type="text" class="form-control" placeholder="キーワードを入力">
                                 <button class="btn btn-danger" type="button" id="button-addon2"><i class="fas fa-search"></i> search </button>
                             </div>
-                            
+                           
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav">
                              <!-- Authentication Links -->

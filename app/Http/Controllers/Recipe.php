@@ -24,10 +24,23 @@ class Recipe extends Controller
     public function post(Request $request)
     {
         $posts=\DB::table('recipes')->get();
-        
         $title=\DB::table('recipes')->value('title');
         
         
         return view('recipe.post',['posts'=>$posts]);
     }
+  
+    public function maindish(Request $request)
+    {
+        $posts=\DB::table('recipes')->where('genre', '主菜')->get();
+        
+        return view('recipe.maindish', ['posts'=>$posts]);
+    }    
+    
+    public function sidedish(Request $request)
+    {
+        $posts=\DB::table('recipes')->where('genre', '副菜')->get();
+        
+        return view('recipe.sidedish', ['posts'=>$posts]);
+    }    
 }

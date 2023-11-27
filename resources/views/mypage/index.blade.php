@@ -14,23 +14,28 @@
         <hr color="#c0c0c0">
         <div class="row">
             <div class="posts">
-
+                
                 @foreach ($posts as $post)
+                    <li>
                     <div class="date">
                         {{ $post->updated_at->format('Y年m月d日') }}
                     </div>
                     <div>
                         <p>{{$post->title}}</p>
                         <p>{{$post->detail}}</p>
-                    <div class="image col-md-6 text-right mt-4">
-                        @if ($post->image_path)
-                            <img src="{{ asset('storage/image/'.$post->image_path)}}">
-                        @endif
+                        <div class="image col-md-6 text-right mt-4">
+                            @if ($post->image_path)
+                                <img src="{{ asset('storage/image/'.$post->image_path)}}">
+                            @endif
+                        </div>
                     </div>
-                    </div>
+                    
                     <hr color="#c0c0c0">
+                    </li>
                 @endforeach
-            
+               <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">全て見る</button>
+ 
+                    
             </div>
         </div>
     </div>
@@ -52,7 +57,7 @@
             <img src="{{ secure_asset('image/主菜.jpeg') }}">
             <p class="sub_button">主菜
             <br>
-            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">見る</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.maindish')}}'">見る</button>
             </p>
         </div>
     </span>
@@ -61,7 +66,7 @@
             <img src="{{ secure_asset('image/副菜.jpeg') }}">
             <p class="sub_button">副菜
             <br>
-            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">見る</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.sidedish')}}'">見る</button>
             </p>
         </div>
     </span>

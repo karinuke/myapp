@@ -58,6 +58,12 @@ img {
   width: 100px;
 }
 
+.header_title {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+}
+
 .circle_parent {
   text-align: center;
 }
@@ -169,4 +175,16 @@ img {
   border: 3px solid #DCE8B0;
   padding-left: 10px;
   border-radius: 10px;
+}
+
+.posts {
+  display: table;
+}
+.posts li {
+  display: table-cell;
+}
+.posts button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }

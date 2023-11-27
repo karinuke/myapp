@@ -7,31 +7,32 @@
 @foreach ($posts as $post)
 <div class='post'>
   <div class="circle_post">
-     <div class="circle_postimage">
-             <img src="{{ secure_asset('storage/image/'.$post->image_path) }}">
-     </div>
+        <div class="circle_postimage">
+            <img src="{{ secure_asset('storage/image/'.$post->image_path) }}">
+        </div>
   </div>
   
   <div="recipe_posts"> 
-   <p>{{$post->genre}}</p>
+        <p>{{$post->genre}}</p>
    
    <h2>
-       <p>{{$post->title}}</p>
+        <p>{{$post->title}}</p>
    </h2>
    <h3>
-   <p>{{$post->detail}}</p>
+        <p>{{$post->detail}}</p>
    </h3>
-   材料
-   <div class="box_materials">
-   <p>{{$post->materials}}</p>
-   </div>
-    
+        
+        材料
+        <div class="box_materials">
+        <p>{{$post->materials}}</p>
+        </div>
+        
     <br>
   
-      作り方
-      <div class="box_recipe">
-      <p>{{$post->recipe}}</p>
-      </div>
+        作り方
+        <div class="box_recipe">
+        <p>{{$post->recipe}}</p>
+        </div>
   </div>
  </div>
 
