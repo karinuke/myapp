@@ -1,5 +1,7 @@
+@php
+$title = 'プロフィール登録';
+@endphp
 @extends('layouts.mypage')
-@section('title', 'プロフィール登録')
 
 @section('content')
  <div class="title_box">

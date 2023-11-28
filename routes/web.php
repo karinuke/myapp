@@ -40,12 +40,14 @@ Route::controller(ProfileController::class)->prefix('mypage')->name('mypage.')->
     Route::post('profile/edit','update')->name('profile.update');
 });
 
-use App\Http\Controllers\Recipe;
-Route::controller(Recipe::class)->middleware('auth')->group(function(){
+use App\Http\Controllers\RecipeController as PublicRecipeController;
+Route::controller(PublicRecipeController::class)->middleware('auth')->group(function(){
     Route::get('recipe','index')->name('recipe.index');
-    Route::get('recipe/post', 'post')->name('recipe.post');
+    Route::get('recipe/post', 'show')->name('recipe.post');
+    Route::get('recipe/staple','staple')->name('recipe.staple');
     Route::get('recipe/maindish','maindish')->name('recipe.maindish');
     Route::get('recipe/sidedish','sidedish')->name('recipe.sidedish');
+    Route::get('recipe/soup','soup')->name('recipe.soup');
 });
 
 Auth::routes();

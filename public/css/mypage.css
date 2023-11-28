@@ -66,10 +66,11 @@ img {
 
 .circle_parent {
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .circle {
-  display: inline-block;
   text-align: center;
   width: 300px;
   height: 300px;

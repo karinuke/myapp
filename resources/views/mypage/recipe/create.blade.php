@@ -1,5 +1,7 @@
+@php
+$title = 'レシピ登録';
+@endphp
 @extends('layouts.mypage')
-@section('title', 'レシピ投稿')
 
 @section('content')
  <div class="title_box">

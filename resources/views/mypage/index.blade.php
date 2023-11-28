@@ -1,5 +1,7 @@
+@php
+$title = 'TOP PAGE';
+@endphp
 @extends('layouts.mypage')
-@section('title', 'TOP PAGE')
 
 @section('content')
     <img src="{{ secure_asset('image/topphoto.jpg') }}">
@@ -41,44 +43,44 @@
     </div>
     </div>
     
-    <div class="circle_parent">
-    <span class="circle">
-        <div class="circle_image">
-            <img src="{{ secure_asset('image/主食.jpeg') }}">
-            <p class="sub_button">主食
-            <br>
-            
-            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">見る</button>
-            </p>
-        </div>
-    </span>
-    <span class="circle">
-        <div class="circle_image">
-            <img src="{{ secure_asset('image/主菜.jpeg') }}">
-            <p class="sub_button">主菜
-            <br>
-            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.maindish')}}'">見る</button>
-            </p>
-        </div>
-    </span>
-    <span class="circle">
-        <div class="circle_image">
-            <img src="{{ secure_asset('image/副菜.jpeg') }}">
-            <p class="sub_button">副菜
-            <br>
-            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.sidedish')}}'">見る</button>
-            </p>
-        </div>
-    </span>
-    <span class="circle">
-        <div class="circle_image">
-            <img src="{{ secure_asset('image/汁物.jpeg') }}">
-            <p  class="sub_button">汁物
-            <br>
-            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">見る</button>
-            </p>
-        </div>
-    </span>
+    <div class="circle_parent container">
+        <span class="circle">
+            <div class="circle_image">
+                <img src="{{ secure_asset('image/主食.jpeg') }}">
+                <p class="sub_button">主食
+                <br>
+                
+                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.staple')}}'">見る</button>
+                </p>
+            </div>
+        </span>
+        <span class="circle">
+            <div class="circle_image">
+                <img src="{{ secure_asset('image/主菜.jpeg') }}">
+                <p class="sub_button">主菜
+                <br>
+                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.maindish')}}'">見る</button>
+                </p>
+            </div>
+        </span>
+        <span class="circle">
+            <div class="circle_image">
+                <img src="{{ secure_asset('image/副菜.jpeg') }}">
+                <p class="sub_button">副菜
+                <br>
+                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.sidedish')}}'">見る</button>
+                </p>
+            </div>
+        </span>
+        <span class="circle">
+            <div class="circle_image">
+                <img src="{{ secure_asset('image/汁物.jpeg') }}">
+                <p  class="sub_button">汁物
+                <br>
+                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.soup')}}'">見る</button>
+                </p>
+            </div>
+        </span>
     </div>
 
 @endsection

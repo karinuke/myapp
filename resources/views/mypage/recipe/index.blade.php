@@ -1,6 +1,7 @@
+@php
+$title = 'Myレシピ一覧';
+@endphp
 @extends('layouts.mypage')
-@section('title', 'Myレシピ一覧')
-
 
 @section('content')
 <div class="container">

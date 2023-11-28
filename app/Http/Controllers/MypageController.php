@@ -14,12 +14,6 @@ class MypageController extends Controller
         
         $posts = Recipe::orderBy('id','desc')->take(3)->get();
         
-        if(count($posts)>0){
-            $headline=$posts->shift();
-        } else {
-            $headline=null;
-        }
-        
-        return view(('mypage.index'), ['headline'=>$headline, 'posts' => $posts]);
+        return view(('mypage.index'), ['posts' => $posts]);
     }
 }

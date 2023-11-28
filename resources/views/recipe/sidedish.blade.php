@@ -1,5 +1,8 @@
+@php
+$title = 'レシピ一覧';
+@endphp
 @extends('layouts.mypage')
-@section('title', 'レシピ一覧')
+
 
 @section('content')
 <div class="title_box">
@@ -17,12 +20,12 @@
 
                 @foreach ($posts as $post)
                     <div>
-                        <h2>
-                            <p>{{$post->genre}}</p>
-                        </h2>
                         <h3>
-                            <p>{{$post->title}}</p>
+                            <p>{{$post->genre}}</p>
                         </h3>
+                        <h2>
+                            <p>{{$post->title}}</p>
+                        </h2>
                         
                         <p>{{$post->detail}}</p>
                         

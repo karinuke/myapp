@@ -1,5 +1,7 @@
+@php
+$title = '登録情報';
+@endphp
 @extends('layouts.mypage')
-@section('title', '登録情報')
 
 @section('content')
     

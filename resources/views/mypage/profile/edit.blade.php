@@ -1,5 +1,7 @@
+@php
+$title = '登録情報の編集';
+@endphp
 @extends('layouts.mypage')
-@section('title', '登録情報の編集')
 
 @section('content')
      <div class="container">
