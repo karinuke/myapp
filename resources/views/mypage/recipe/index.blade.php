@@ -4,22 +4,48 @@ $title = 'Myレシピ一覧';
 @extends('layouts.mypage')
 
 @section('content')
-<div class="container">
-        <div class="row">
-            <h2>MyPage</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <form action="{{ route('mypage.recipe.index') }}" method="get">
-                    <div class="form-group row">
-                        <div class="title_box">
-                            <a class="title_text" href="{{route('mypage.profile.index')}}"><font size="6">登録情報</font></a>
-                        </div>
-                        <div class="title_box">
-                            <a class="title_text" href="{{route('mypage.recipe.index')}}"><font size="6">Myレシピ一覧</font></a>
-                        </div>
-                        
 
+<h2 align="center">
+My Page
+</h2>
+<div class="col-md-8">
+    <form action="{{ route('mypage.recipe.index') }}" method="get">
+    </form>
+</div>    
+
+<div class="mypage_title_box">
+    <a class="mypage_title_text" href="{{route('mypage.profile.index')}}"><font size="6">登録情報</font></a>
+    
+    <a class="mypage_title_text" href="{{route('mypage.recipe.index')}}"><font size="6">Myレシピ一覧</font></a>
+</div>
+
+<div class="container">
+
+        <div class="row">
+            <div class="posts">
+                <br>
+               @foreach ($posts as $post)
+                    <article class="article-item">
+                        <div class="article-title"><a href="{{ route('recipe.post', ['id' => $post->id]) }}">{{ $post->title }}</a></div>
+                        <div class="article-info">
+                            {{ $post->created_at }}｜{{ $post->user->name }}
+                        </div>
+                    </article>
+                    
+                    <div>
+                        <a href="{{ route('mypage.recipe.edit', ['id' => $post->id]) }}">編集</a>
+                    </div>
+                    <div>
+                        <a href="{{ route('mypage.recipe.delete', ['id' => $post->id]) }}">削除</a>
+                    </div>
+                    
+                    <hr color="#c0c0c0">
+                    <br>
+                @endforeach
+
+            </div>       
+        </div>
+</div>
 
 
 @endsection

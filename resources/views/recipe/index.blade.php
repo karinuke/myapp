@@ -8,9 +8,9 @@ $title = 'レシピ一覧';
     <span class="title_text"><font size="6">レシピ一覧</font></span>
 </div>
 <div class="col-md-8">
-                <form action="{{ route('recipe.index') }}" method="get">
-                </form>
-            </div>
+    <form action="{{ route('recipe.index') }}" method="get">
+    </form>
+</div>
         </div>
         <div class="container">
         <hr color="#c0c0c0">
@@ -23,17 +23,16 @@ $title = 'レシピ一覧';
                             <p>{{$post->genre}}</p>
                         </h3>
                         <h2>
-                            <p>{{$post->title}}</p>
+                            <p><a href="{{ route('recipe.post', ['id' => $post->id]) }}">{{ $post->title }}</a></p>
                         </h2>
                         
                         <p>{{$post->detail}}</p>
                         
-                    <div class="image col-md-6 text-right mt-4">
-                        @if ($post->image_path)
-                            <img src="{{ asset('storage/image/'.$post->image_path)}}">
-                        @endif
-                    </div>
-                    <div><a href="{{ route('recipe.post', ['id' => $post->id]) }}">見る</a></div>
+                        <div class="image col-md-6 text-right mt-4">
+                            @if ($post->image_path)
+                                <img src="{{ asset('storage/image/'.$post->image_path)}}">
+                            @endif
+                        </div>
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach

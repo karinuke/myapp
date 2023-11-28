@@ -35,6 +35,10 @@ $title = $post->title;
         <p>{{$post->recipe}}</p>
         </div>
   </div>
+  
+  <div align="center">
+    <a class="btn btn-danger" href="{{ route('recipe.index') }}" >レシピ一覧に戻る</a>
+  </div>
  </div>
 
 

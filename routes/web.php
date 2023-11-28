@@ -28,6 +28,7 @@ Route::controller(RecipeController::class)->prefix('mypage')->name('mypage.')->m
     Route::get('recipe','index')->name('recipe.index');
     Route::get('recipe/edit','edit')->name('recipe.edit');
     Route::post('recipe/edit','update')->name('recipe.update');
+    Route::get('recipe/delete', 'delete')->name('recipe.delete');
 });
 
 use App\Http\Controllers\Mypage\ProfileController;

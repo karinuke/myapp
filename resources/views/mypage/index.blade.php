@@ -27,7 +27,7 @@ $title = 'TOP PAGE';
                         <p>{{$post->detail}}</p>
                         <div class="image col-md-6 text-right mt-4">
                             @if ($post->image_path)
-                                <img src="{{ asset('storage/image/'.$post->image_path)}}">
+                                <img src="{{ asset('storage/image/'.$post->image_path)}}" width="200" height="200">
                             @endif
                         </div>
                     </div>
