@@ -19,12 +19,11 @@ class RecipeController extends Controller
     {
         
         $recipe = Recipe::find($request->id);
-        //$this->authorize($recipe);
         if (empty($recipe)) {
             abort(404);
         }
         
-        return view('mypage.recipe.edit', ['recipe_form'=>$recipe]);
+        return view('mypage.recipe.edit', ['recipe'=>$recipe]);
     }
     
     public function create(Request $request)
@@ -66,12 +65,15 @@ class RecipeController extends Controller
         return view('mypage.recipe.index', ['posts'=>$posts, 'data'=>$data]);
     }
     
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         
+        $this->authorize('update', $posts);
         $this->validate($request, Recipe::$rules);
+        
+        
         $posts=Recipe::find($request->id);
-        $this->authorize($posts);
+        
         $recipe_form=$request->all();
         
         if ($request->remove == 'true') {
@@ -80,7 +82,7 @@ class RecipeController extends Controller
             $path = $request->file('image')->store('public/image');
             $recipe_form['image_path'] = basename($path);
         } else {
-            $recipe_form['image_path'] = $recipe->image_path;
+            $recipe_form['image_path'] = $posts->image_path;
         }
 
         unset($recipe_form['image']);
@@ -88,16 +90,17 @@ class RecipeController extends Controller
         unset($recipe_form['_token']);
         
         
-        $recipe->fill($recipe_form)->save();
+        $posts->fill($recipe_form)->save();
         
         return redirect('mypage/recipe', ['posts'=>$posts]);
     }
     
-    public function delete(Request $request)
+    public function delete(Request $request, $id)
     {
         
+        $this->authorize('delete', $posts);
         $posts = Recipe::find($request->id);
-        $this->authorize($posts);
+        
         $posts->delete();
         
         return redirect(route('mypage.recipe.index'),['posts'=>$posts]);

@@ -33,6 +33,7 @@ $title = 'レシピ一覧';
                                 <img src="{{ asset('storage/image/'.$post->image_path)}}">
                             @endif
                         </div>
+                        {{ $post->created_at }}｜{{ $post->user->name }}
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach

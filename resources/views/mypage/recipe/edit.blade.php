@@ -29,35 +29,36 @@ $title = 'レシピ編集';
                             </select>
                         </div>
                     </div>
+                    
                     <div class="form-group row">
                         <label class="col-md-2">キャッチコピー</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                            <input type="text" class="form-control" name="title" value="{{ $recipe->title }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">詳細やポイント</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="detail" rows="3">{{ old('detail') }}</textarea>
+                            <input class="form-control" name="detail" value="{{ $recipe->detail }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">完成写真</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image" value="{{ $recipe->image_path }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">材料</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="materials" rows="10">{{ old('materials') }}</textarea>
+                            <input class="form-control" name="materials" rows="10" value="{{ $recipe->materials }}">
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-2">作り方</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="recipe" rows="30">{{ old('recipe') }}</textarea>
+                            <input class="form-control" name="recipe" rows="30" value="{{ $recipe->recipe }}">
                         </div>
                     </div>
                     </div>

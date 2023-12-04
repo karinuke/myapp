@@ -14,7 +14,7 @@ My Page
 </div>    
 
 <div class="mypage_title_box">
-    <a class="mypage_title_text" href="{{route('mypage.profile.index')}}"><font size="6">登録情報</font></a>
+    <a class="mypage_title_text" href="{{route('mypage.profile.index')}}"><font size="6">プロフィール登録情報</font></a>
     
     <a class="mypage_title_text" href="{{route('mypage.recipe.index')}}"><font size="6">Myレシピ一覧</font></a>
 </div>
@@ -31,13 +31,16 @@ My Page
                             {{ $post->created_at }}｜{{ $post->user->name }}
                         </div>
                     </article>
-                    
+                    @can('update', $post)
                     <div>
-                        <a href="{{ route('mypage.recipe.edit', ['id' => $post->id]) }}">編集</a>
+                        <a class="btn btn-info btn-sm" href="{{ url('mypage/recipe/'.$post->id .'/' .'edit') }}">編集</a>
                     </div>
+                    @endcan
+                    @can('delete', $post)
                     <div>
                         <a href="{{ route('mypage.recipe.delete', ['id' => $post->id]) }}">削除</a>
                     </div>
+                    @endcan
                     
                     <hr color="#c0c0c0">
                     <br>
