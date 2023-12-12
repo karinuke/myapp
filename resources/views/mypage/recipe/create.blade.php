@@ -60,7 +60,7 @@ $title = 'レシピ登録';
                     <div class="form-group row">
                         <label class="col-md-2">作り方</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="recipe" rows="30">{{ old('recipe') }}</textarea>
+                            <textarea class="form-control" name="recipe" rows="20">{{ old('recipe') }}</textarea>
                         </div>
                     </div>
                     @csrf

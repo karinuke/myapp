@@ -49,6 +49,7 @@ Route::controller(PublicRecipeController::class)->middleware('auth')->group(func
     Route::get('recipe/maindish','maindish')->name('recipe.maindish');
     Route::get('recipe/sidedish','sidedish')->name('recipe.sidedish');
     Route::get('recipe/soup','soup')->name('recipe.soup');
+    Route::get('recipe/profile','profile')->name('recipe.profile');
 });
 
 Auth::routes();

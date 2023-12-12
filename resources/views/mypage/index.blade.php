@@ -82,5 +82,18 @@ $title = 'TOP PAGE';
             </div>
         </span>
     </div>
+  
+  
+  
+  {{--献立作る機能の実装？--}}  
+    <div class="menu" align="center">
+        <h2>今日の献立をつくる</h2>
+            <span>
+                <input type="text" name="avatar" class="d-none"　id="主食">
+                <label for="avatar" class="d-inline-block">
+                   <p>{{$post->title}}</p>
+                </label>
+            </span>
+    </div>
 
 @endsection

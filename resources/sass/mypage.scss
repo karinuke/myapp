@@ -179,18 +179,6 @@ img{
   text-align: center;
 }
 
-.box_materials{
-  background: #DCE8B0;
-  border: 3px solid #DCE8B0;
-  padding-left: 10px;
-  border-radius: 10px;
-}
-.box_recipe{
-  border: 3px solid #DCE8B0;
-  padding-left: 10px;
-  border-radius: 10px;
-}
-
 .posts{
   display: table;
   li{
@@ -203,6 +191,88 @@ img{
   }
 }
 
+.profile{
+  position: relative;
+  
+  div {
+    position: absolute;
+    top: 55%;
+    left: 42%;
+  }
+}
+
+.details{
+  position: relative;
+  margin: 150px 500px;
+}
+
+
+.sample-box-05 {
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid #D94F41;
+    border-radius: 8px;
+    position:relative;
+}
+
+.sample-box-05::before {
+    background-color: #fff;
+    color: #D94F41;
+    content: "作り方";
+    font-weight: bold;
+    position: absolute;
+    padding: 0 20px;
+    left: 10px;
+    top: -10px;
+}
+
+
+.sample-box-03 {
+    margin: 10px;
+    padding: 30px;
+    border-radius: 8px;
+    border: dashed #D94F41;
+}
+
+.balloon{
+  position: relative;
+  padding: 20px;
+  background-color: #107b5e;
+  color: #DCE8B0;
+  border-radius: 10px;
+}
+/* 色付きの半円 */
+.balloon::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  left: 20px;
+  top: -15px;
+  border-left: 20px solid #46593A;
+  border-top: 20px solid #46593A;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+/* 白い半円 */
+.balloon::after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  left: 35px;
+  top: -20px;
+  border-left: 20px solid #fff;
+  border-top: 20px solid #fff;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
 
 //npm run dev
 //npm run watch

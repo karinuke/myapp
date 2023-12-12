@@ -31,7 +31,8 @@ My Page
                                <img src="{{ asset('storage/images/'. Auth::user()->avatar)}}" class="rounded-circle" style="object-fit: cover; width: 200px; height: 200px;">
                             </label>
                         </span>
-                    
+                        
+                        <br>
                         
                         <p>
                             名前 : {{ Auth::user()->name }}

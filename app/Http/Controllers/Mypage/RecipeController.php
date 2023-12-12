@@ -14,18 +14,7 @@ class RecipeController extends Controller
     {
         return view('mypage.recipe.create');
     }
-    
-    public function edit(Request $request)
-    {
-        
-        $recipe = Recipe::find($request->id);
-        if (empty($recipe)) {
-            abort(404);
-        }
-        
-        return view('mypage.recipe.edit', ['recipe'=>$recipe]);
-    }
-    
+   
     public function create(Request $request)
     {
         $this->validate($request, Recipe::$rules);
@@ -33,7 +22,6 @@ class RecipeController extends Controller
         $recipe=new Recipe;
         $recipe->user_id = \Auth::id();
         $form=$request->all();
-        //https://newmonz.jp/lesson/laravel-basic/chapter-8
         
         if(isset($form['image'])){
             $path=$request->file('image')->store('public/image');
@@ -65,45 +53,45 @@ class RecipeController extends Controller
         return view('mypage.recipe.index', ['posts'=>$posts, 'data'=>$data]);
     }
     
-    public function update(Request $request, $id)
+     
+    public function edit(Request $request)
     {
         
-        $this->authorize('update', $posts);
-        $this->validate($request, Recipe::$rules);
-        
-        
-        $posts=Recipe::find($request->id);
-        
-        $recipe_form=$request->all();
-        
-        if ($request->remove == 'true') {
-            $recipe_form['image_path'] = null;
-        } elseif ($request->file('image')) {
-            $path = $request->file('image')->store('public/image');
-            $recipe_form['image_path'] = basename($path);
-        } else {
-            $recipe_form['image_path'] = $posts->image_path;
+        $posts = Recipe::find($request->id);
+        if (empty($posts)) {
+            abort(404);
         }
-
-        unset($recipe_form['image']);
-        unset($recipe_form['remove']);
-        unset($recipe_form['_token']);
         
-        
-        $posts->fill($recipe_form)->save();
-        
-        return redirect('mypage/recipe', ['posts'=>$posts]);
+        return view('mypage.recipe.edit', ['posts'=>$posts]);
     }
     
-    public function delete(Request $request, $id)
+    
+    public function update(Request $request)
+    {
+        //$this->validate($request, Recipe::$rules);
+        //dd($request);
+        $posts=Recipe::find($request->id);
+        
+        //$this->authorize('update', $posts);
+        
+        $posts_form=$request->all();
+        unset($posts_form['_token']);
+        
+        $posts->fill($posts_form);
+        $posts->save();
+        
+        return redirect('mypage/recipe');
+    }
+    
+    public function delete(Request $request)
     {
         
-        $this->authorize('delete', $posts);
+        //$this->authorize('delete', $posts);
         $posts = Recipe::find($request->id);
         
         $posts->delete();
         
-        return redirect(route('mypage.recipe.index'),['posts'=>$posts]);
+        return redirect('mypage/recipe');
     }
     
 }

@@ -33,7 +33,7 @@ My Page
                     </article>
                     @can('update', $post)
                     <div>
-                        <a class="btn btn-info btn-sm" href="{{ url('mypage/recipe/'.$post->id .'/' .'edit') }}">編集</a>
+                        <a class="btn btn-danger" href="{{ url('mypage/recipe/edit/?id='. $post->id) }}">編集</a>
                     </div>
                     @endcan
                     @can('delete', $post)
@@ -49,6 +49,5 @@ My Page
             </div>       
         </div>
 </div>
-
 
 @endsection
