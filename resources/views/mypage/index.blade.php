@@ -84,7 +84,6 @@ $title = 'TOP PAGE';
     </div>
   
   
-  
   {{--献立作る機能の実装？--}}  
     <div class="menu" align="center">
         <h2>今日の献立をつくる</h2>
@@ -94,6 +93,9 @@ $title = 'TOP PAGE';
                    <p>{{$post->title}}</p>
                 </label>
             </span>
+            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('mypage.menu.create')}}'">見る</button>
     </div>
+    
+    
 
 @endsection

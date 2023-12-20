@@ -20,6 +20,13 @@ Route::get('/', function () {
 use App\Http\Controllers\MypageController as PublicMypageController;
 Route::get('/', [PublicMypageController::class, 'index']) -> name('mypage.index');
 
+use App\Http\Controllers\Mypage\MenuController;
+Route::controller(MenuController::class)->prefix('mypage')->name('mypage.')->middleware('auth')->group(function(){
+    Route::get('menu/create','add')->name('menu.add');
+    //Route::get('menu/edit','edit')->name('menu.edit');
+    Route::post('menu/create','create')->name('menu.create');
+});
+
 use App\Http\Controllers\Mypage\RecipeController;
 Route::controller(RecipeController::class)->prefix('mypage')->name('mypage.')->middleware('auth')->group(function(){
     Route::get('recipe/create','add')->name('recipe.add');

@@ -33,7 +33,7 @@ $title = 'レシピ一覧';
                                 <img src="{{ asset('storage/image/'.$post->image_path)}}">
                             @endif
                         </div>
-                         {{ $post->created_at }}｜{{ $post->user->name }}
+                         <img src="{{ secure_asset( 'storage/images/'. $post->user->avatar ) }}" style="width:50px; height:50px; border-radius:50%; position:relative; right: 10px;"> {{ $post->user->username }}｜{{ $post->created_at }}
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach
