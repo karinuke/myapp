@@ -15,4 +15,9 @@ class Menu extends Model
         'sidedish' => 'required',
         'soup' => 'required',
     );
+    
+    public function recipe()
+    {
+        return $this->belongsTo(Recipe::class);
+    }
 }

@@ -8,40 +8,36 @@ $title = 'レシピ一覧';
     <span class="title_text"><font size="6">レシピ一覧・主菜</font></span>
 </div>
 <div class="col-md-8">
-                <form action="{{ route('recipe.maindish') }}" method="get">
-                </form>
-            </div>
-        </div>
-        <div class="container">
-        <hr color="#c0c0c0">
+    <form action="{{ route('recipe.maindish') }}" method="get">
+    </form>
+</div>
+<div class="container">
+    <hr color="#c0c0c0">
         <div class="row">
             <div class="posts">
-
-                @foreach ($posts as $post)
-                    <div>
-                        <h3>
-                            <p>{{$post->genre}}</p>
-                        </h3>
-                        <h2>
-                            <p><a href="{{ route('recipe.post', ['id' => $post->id]) }}">{{ $post->title }}</a></p>
-                        </h2>
-                        
-                        <p>{{$post->detail}}</p>
-                        
-                        <div class="image col-md-6 text-right mt-4">
-                            @if ($post->image_path)
-                                <img src="{{ asset('storage/image/'.$post->image_path)}}">
-                            @endif
+                <div class="recipe_post">
+                    @foreach ($posts as $post)
+                        <div class="recipe_post_child">
+                            <h3>
+                                <p>{{$post->genre}}</p>
+                            </h3>
+                            <h2>
+                                <p><a href="{{ route('recipe.post', ['id' => $post->id]) }}">{{ $post->title }}</a></p>
+                            </h2>
+                            
+                            <p>{{$post->detail}}</p>
+                            
+                            <div class="image col-md-6 text-right mt-4">
+                                @if ($post->image_path)
+                                    <img src="{{ asset('storage/image/'.$post->image_path)}}">
+                                @endif
+                            </div>
+                           <img src="{{ secure_asset( 'storage/images/'. $post->user->avatar ) }}" style="width:50px; height:50px; border-radius:50%; position:relative; right: 10px;"> {{ $post->user->username }}｜{{ $post->created_at }}
                         </div>
-                         <img src="{{ secure_asset( 'storage/images/'. $post->user->avatar ) }}" style="width:50px; height:50px; border-radius:50%; position:relative; right: 10px;"> {{ $post->user->username }}｜{{ $post->created_at }}
-                    </div>
-                    <hr color="#c0c0c0">
-                @endforeach
-            
+                        <hr color="#c0c0c0">
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
-    </div>
-
     </div>
 @endsection

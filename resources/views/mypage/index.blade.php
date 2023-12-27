@@ -36,7 +36,6 @@ $title = 'TOP PAGE';
                     </li>
                 @endforeach
                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.index')}}'">全て見る</button>
- 
                     
             </div>
         </div>
@@ -83,19 +82,17 @@ $title = 'TOP PAGE';
         </span>
     </div>
   
-  
   {{--献立作る機能の実装？--}}  
     <div class="menu" align="center">
         <h2>今日の献立をつくる</h2>
-            <span>
-                <input type="text" name="avatar" class="d-none"　id="主食">
-                <label for="avatar" class="d-inline-block">
-                   <p>{{$post->title}}</p>
-                </label>
-            </span>
-            <button type="button" class="btn btn-danger" onclick="location.href='{{ route('mypage.menu.create')}}'">見る</button>
+        @foreach ($menus as $menu)
+            <div class="d-flex">
+                <p>{{ $menu->maindish }}</p>
+            </div>
+            <hr color="#c0c0c0">
+        @endforeach
+        
+        <button type="button" class="btn btn-danger" onclick="location.href='{{ route('mypage.menu.create')}}'">献立を作る</button>
     </div>
     
-    
-
 @endsection

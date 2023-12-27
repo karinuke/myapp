@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Recipe;
+use App\Models\Menu;
 
 class MypageController extends Controller
 {
@@ -14,7 +15,11 @@ class MypageController extends Controller
         
         $posts = Recipe::orderBy('id','desc')->take(3)->get();
         
-        return view(('mypage.index'), ['posts' => $posts]);
+        //$menus = Menu::with('recipe')->get();
+        
+        $menus = Menu::find(1)->recipe->title;
+        
+        return view(('mypage.index'), ['posts' => $posts, 'menus'=>$menus]);
     }
     
 }

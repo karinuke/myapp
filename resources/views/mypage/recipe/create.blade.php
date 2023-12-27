@@ -33,7 +33,7 @@ $title = 'レシピ登録';
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">キャッチコピー</label>
+                        <label class="col-md-2">料理名</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                         </div>
@@ -64,7 +64,7 @@ $title = 'レシピ登録';
                         </div>
                     </div>
                     @csrf
-                    <div align="center">
+                    <div class="text-center">
                         <input type="submit" class="btn btn-danger" value="投稿！">
                     </div>
                 </form>

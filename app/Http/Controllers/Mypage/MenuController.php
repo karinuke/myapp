@@ -13,8 +13,13 @@ class MenuController extends Controller
     //
     public function add()
     {
-
-        return view('mypage.menu.create');
+        $maindishes=Recipe::where('genre', '主菜')->get();
+        
+        $sidedishes=Recipe::where('genre', '副菜')->get();
+        
+        $soups=Recipe::where('genre', '汁物')->get();
+        
+        return view('mypage.menu.create', ['maindishes'=>$maindishes,'sidedishes'=>$sidedishes, 'soups'=>$soups]);
     }
     
     public function create(Request $request)
@@ -24,12 +29,15 @@ class MenuController extends Controller
         $menu = new Menu;
         $form = $request->all();
         
-        $maindishes=Recipe::where('genre', '主菜')->get();
+        $menu->maindish = $request->maindish;
+        $menu->sidedish = $request->sidedish;
+        $menu->soup = $request->soup;
         
-        $sidedishes=Recipe::where('genre', '副菜')->get();
+        unset($form['token']);
         
-        $soups=Recipe::where('genre', '汁物')->get();
+        $menu->fill($form);
+        $menu->save();
         
-        return redirect('/', ['maindishes'=>$maindishes,'sidedishes'=>$sidedishes, 'soups'=>$soups]);
+        return redirect('/');
     }
 }

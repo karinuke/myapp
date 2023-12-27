@@ -6,34 +6,64 @@ $title = 'CREATE MENU';
 @section('content')
 <div class="title_box">
     <span class="title_text"><font size="6">献立作成</font></span>
- </div>
- <div class="container">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                
-                <form action="{{ route('mypage.menu.create') }}" method="post" enctype="multipart/form-data">
-                    
-                    @foreach ($maindishes as $maindish)
-                    <div>
-                        <h3>
-                            <p>{{$maindish->genre}}</p>
-                        </h3>
-                        <h2>
-                            <p><a href="{{ route('recipe.post', ['id' => $maindish->id]) }}">{{ $maindish->title }}</a></p>
-                        </h2>
-                        
-                        <p>{{$maindish->detail}}</p>
-                        
+</div>
+<div class="container">
+    <form action="{{ route('mypage.menu.create') }}" method="post" enctype="multipart/form-data">
+        <h2>主菜</h2>
+        <div class="d-flex">
+            @foreach ($maindishes as $maindish)
+                <label class="menu_cont">
+                　  <input type="radio" name="maindish" value="{{ $maindish->id }}">
+                　  <div>
+                        <h2>{{ $maindish->title }}</h2>
                         <div class="image col-md-6 text-right mt-4">
                             @if ($maindish->image_path)
                                 <img src="{{ asset('storage/image/'.$maindish->image_path)}}">
                             @endif
                         </div>
-                         <img src="{{ secure_asset( 'storage/images/'. $maindish->user->avatar ) }}" style="width:50px; height:50px; border-radius:50%; position:relative; right: 10px;"> {{ $maindish->user->username }}｜{{ $post->created_at }}
                     </div>
-                    <hr color="#c0c0c0">
-                @endforeach
-                    
-                  
-                    
+                </label>
+            @endforeach
+        </div>
+        
+        <h2>副菜</h2>
+        <div class="d-flex">
+            @foreach ($sidedishes as $sidedish)
+                <label class="menu_cont">
+                　  <input type="radio" name="sidedish" value="{{ $sidedish->id }}">
+                　  <div>
+                        <h2>{{ $sidedish->title }}</h2>
+                        <div class="image col-md-6 text-right mt-4">
+                            @if ($sidedish->image_path)
+                                <img src="{{ asset('storage/image/'.$sidedish->image_path)}}">
+                            @endif
+                        </div>
+                    </div>
+                </label>
+            @endforeach
+        </div>
+        
+        <h2>汁物</h2>
+        <div class="d-flex">
+            @foreach ($soups as $soup)
+                <label class="menu_cont">
+                　  <input type="radio" name="soup" value="{{ $soup->id }}">
+                　  <div>
+                        <h2>{{ $soup->title }}</h2>
+                        <div class="image col-md-6 text-right mt-4">
+                            @if ($soup->image_path)
+                                <img src="{{ asset('storage/image/'.$soup->image_path)}}">
+                            @endif
+                        </div>
+                    </div>
+                </label>
+            @endforeach
+        </div>
+        @csrf
+        
+        <div class="text-center">
+            <input type="submit" class="btn btn-danger" value="作成！">
+        </div>
+    </form>
+</div>              
 @endsection
