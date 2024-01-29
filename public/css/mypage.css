@@ -94,15 +94,15 @@ img {
 }
 
 .circle_post {
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background: #DCE8B0;
 }
 
 .circle_postimage {
-  width: 450px;
-  height: 450px;
+  width: 250px;
+  height: 250px;
   position: relative;
   top: 25px;
   left: 25px;
@@ -140,7 +140,7 @@ img {
 
 .mypage_title_text {
   color: #46593A;
-  margin: 100px;
+  margin-right: 100px;
 }
 
 .mypage_title_box {
@@ -148,7 +148,8 @@ img {
   height: 70px;
   background: #DCE8B0;
   position: relative;
-  text-align: center;
+  justify-content: center;
+  display: flex;
 }
 
 .container {
@@ -167,16 +168,16 @@ img {
 .post {
   display: flex;
   flex-warp: wrap;
-  justify-content: space-around;
-  width: 60%;
+  justify-content: center;
   margin: 30px 0;
   padding-top: 30px;
 }
 
 .recipe_posts {
   margin-bottom: 30px;
+  margin-left: 50px;
   padding: 50px 10px;
-  text-align: center;
+  text-align: start;
 }
 
 .recipe_post {
@@ -219,6 +220,7 @@ img {
 }
 
 .sample-box-05 {
+  width: 500px;
   margin: 10px;
   padding: 20px;
   border: 2px solid #D94F41;
@@ -238,6 +240,7 @@ img {
 }
 
 .sample-box-03 {
+  width: 500px;
   margin: 10px;
   padding: 30px;
   border-radius: 8px;
@@ -336,4 +339,172 @@ img {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23767d83%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   content: "";
+}
+
+.menu_img {
+  display: flex;
+  margin: 0 auto;
+  border: 0px solid;
+  flex-wrap: wrap;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.large_img {
+  position: relative;
+}
+.large_img img {
+  height: 400px;
+  width: 100%;
+}
+.large_img p {
+  position: absolute; /*絶対配置*/
+  color: #000; /*文字は白に*/
+  top: 5%;
+  left: 5%;
+  font-size: 30px;
+  background: #fff;
+  opacity: 0.7;
+}
+
+.small_img {
+  position: relative;
+}
+.small_img img {
+  height: 200px;
+  width: 100%;
+}
+.small_img p {
+  position: absolute; /*絶対配置*/
+  color: #000; /*文字は白に*/
+  top: 5%;
+  left: 5%;
+  font-size: 20px;
+  background: #fff;
+  opacity: 0.7;
+}
+
+.side_img {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  position: relative;
+}
+.side_img p {
+  position: absolute; /*絶対配置*/
+  color: #000; /*文字は白に*/
+  top: 5%;
+  left: 5%;
+  font-size: 20px;
+  background: #fff;
+  opacity: 0.7;
+}
+
+.cp_block {
+  margin: 5em auto;
+  text-align: center;
+}
+
+.cp_textlink06 {
+  position: relative;
+  display: inline-block;
+  padding: 0.1em 0.3em;
+  text-decoration: none;
+  color: #46593A;
+}
+
+.cp_textlink06:after {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: "";
+  transition: all 0.3s ease;
+  opacity: 0;
+  border-radius: 10px;
+  background-color: #46593A;
+}
+
+.cp_textlink06:hover:after {
+  bottom: 0;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.large-box {
+  display: flex;
+}
+
+.menu_page {
+  text-align: center;
+  width: 100%;
+  margin: auto 0;
+}
+
+.accordion {
+  position: relative;
+}
+
+.accordion-001 {
+  max-width: 900px;
+  background-color: #f2f2f2;
+  margin: auto;
+}
+
+.accordion-001:not([open]) {
+  margin-bottom: 7px;
+}
+
+.accordion-001 summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em 2em;
+  border-radius: 5px;
+  background-color: #4fb056;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.accordion-001 summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-001 summary::after {
+  transform: translateY(-25%) rotate(45deg);
+  width: 7px;
+  height: 7px;
+  margin-left: 10px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  content: "";
+  transition: transform 0.3s;
+}
+
+.accordion-001[open] summary::after {
+  transform: rotate(225deg);
+}
+
+.accordion-001 p {
+  transform: translateY(-10px);
+  opacity: 0;
+  margin: 0;
+  padding: 1em 2em 2em 2em;
+  color: #333333;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.accordion-001[open] p {
+  transform: none;
+  opacity: 1;
+}
+
+.inside {
+  margin-top: 20px;
+  margin-left: 20px;
 }

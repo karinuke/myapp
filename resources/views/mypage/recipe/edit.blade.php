@@ -51,14 +51,14 @@ $title = 'レシピ編集';
                     <div class="form-group row">
                         <label class="col-md-2">材料</label>
                         <div class="col-md-10">
-                            <input class="form-control" name="materials" rows="10" value="{{ $posts->materials }}">
+                            <textarea class="form-control" name="materials" rows="10">{{ $posts->materials }}</textarea>
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label class="col-md-2">作り方</label>
                         <div class="col-md-10">
-                            <input class="form-control" name="recipe" rows="20" value="{{ $posts->recipe }}">
+                            <textarea class="form-control" name="recipe" rows="20" >{{ $posts->recipe }}</textarea>
                         </div>
                     </div>
                     

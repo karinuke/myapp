@@ -33,7 +33,7 @@ $title = 'レシピ一覧';
                             <p>{{$post->genre}}</p>
                         </h3>
                         <h2>
-                            <p><a href="{{ route('recipe.post', ['id' => $post->id]) }}">{{ $post->title }}</a></p>
+                            <p><a href="{{ route('recipe.post', ['id' => $post->id]) }}" class="cp_textlink06">{{ $post->title }}</a></p>
                         </h2>
                         
                         <p>{{$post->detail}}</p>

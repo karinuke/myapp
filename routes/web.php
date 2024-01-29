@@ -25,6 +25,7 @@ Route::controller(MenuController::class)->prefix('mypage')->name('mypage.')->mid
     Route::get('menu/create','add')->name('menu.add');
     //Route::get('menu/edit','edit')->name('menu.edit');
     Route::post('menu/create','create')->name('menu.create');
+    Route::get('menu', 'index')->name('menu');
 });
 
 use App\Http\Controllers\Mypage\RecipeController;

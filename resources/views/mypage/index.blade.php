@@ -40,59 +40,24 @@ $title = 'TOP PAGE';
             </div>
         </div>
     </div>
-    </div>
     
-    <div class="circle_parent container">
-        <span class="circle">
-            <div class="circle_image">
-                <img src="{{ secure_asset('image/主食.jpeg') }}">
-                <p class="sub_button">主食
-                <br>
-                
-                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.staple')}}'">見る</button>
-                </p>
-            </div>
-        </span>
-        <span class="circle">
-            <div class="circle_image">
-                <img src="{{ secure_asset('image/主菜.jpeg') }}">
-                <p class="sub_button">主菜
-                <br>
-                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.maindish')}}'">見る</button>
-                </p>
-            </div>
-        </span>
-        <span class="circle">
-            <div class="circle_image">
-                <img src="{{ secure_asset('image/副菜.jpeg') }}">
-                <p class="sub_button">副菜
-                <br>
-                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.sidedish')}}'">見る</button>
-                </p>
-            </div>
-        </span>
-        <span class="circle">
-            <div class="circle_image">
-                <img src="{{ secure_asset('image/汁物.jpeg') }}">
-                <p  class="sub_button">汁物
-                <br>
-                <button type="button" class="btn btn-danger" onclick="location.href='{{ route('recipe.soup')}}'">見る</button>
-                </p>
-            </div>
-        </span>
-    </div>
-  
-  {{--献立作る機能の実装？--}}  
+    {{--献立作る機能の実装--}}  
     <div class="menu" align="center">
-        <h2>今日の献立をつくる</h2>
-        @foreach ($menus as $menu)
-            <div class="d-flex">
-                <p>{{ $menu->maindish }}</p>
+        <h2>今日の献立</h2>
+       
+        <p>{{ $menus->updated_at->format('Y年m月d日') }}</p>
+        <h3>~{{ $maindish->title }}の献立~</h3>
+        <a class="menu_img" href="{{ route('mypage.menu', ['id' => $menus->id]) }}">
+            <div class="large_img">
+                <img src="{{ asset('storage/image/'.$maindish->image_path)}}" alt="{{ $maindish->title }}">
             </div>
-            <hr color="#c0c0c0">
-        @endforeach
-        
+            <div class="small_img">
+                <img src="{{ asset('storage/image/'.$sidedish->image_path)}}" alt="{{ $sidedish->title }}">
+                <div class="side_img">
+                    <img src="{{ asset('storage/image/'.$soup->image_path)}}" alt="{{ $soup->title }}">
+                </div>
+            </div>
+        </a>
         <button type="button" class="btn btn-danger" onclick="location.href='{{ route('mypage.menu.create')}}'">献立を作る</button>
     </div>
-    
 @endsection
